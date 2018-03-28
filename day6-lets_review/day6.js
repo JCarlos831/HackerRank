@@ -1,24 +1,29 @@
 function processData(input) {
-    var array3 = [];
-    var a = '';
-    var b = '';
+    var a = [];
+    var b = [];
     //Enter your code here
     var array1 = input.split('\n');
     // console.log(array1);
     
     for(var i = 1; i < array1.length; i++){
-        // console.log(array[i]);
+        // console.log(array1[i])  Output = Hacker 'new line' Rank;
         for(var j = 0; j < array1[i].length; j++){
             // console.log(array1[i][j]);
             if(j % 2 === 0) {
-                a += array1[i][j];
+                a.push(array1[i][j]);
             } else {
-                b += array1[i][j];
+                if(j % 2 != 0){
+                b.push(array1[i][j]);
+            }
             }
         }
+            console.log(a.join("") + " " + b.join(""));
+    a = []
+    b = [];
     }
-    console.log(a);
 
+
+    
     // var array2 = array1.splice(1,2);
     // var hacker = array2[0];
     // var rank = array2[1];
