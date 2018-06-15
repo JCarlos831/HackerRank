@@ -28,11 +28,8 @@ function readLine() {
 function diagonalDifference(a) {
     let array1 = [];
     let array2 = [];
-    for(let i = 0, j = 0; i < a.length; i++, j++){
+    for(let i = 0, j = 0, k = 0, l = a.length-1; i < a.length; i++, j++, k++, l--){
         array1.push(a[i][j]);
-    }
-    
-    for(let k = 0, l = a.length-1; k < a.length; k++, l--){
         array2.push(a[k][l]);
     }
 
