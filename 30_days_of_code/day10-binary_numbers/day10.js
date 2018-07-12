@@ -25,16 +25,22 @@ function readLine() {
 
 
 function main() {
-    const n = parseInt(readLine(), 10);
-    var binaryNum = n.toString(2);
-    var count = 0;
+    let n = parseInt(readLine(), 10);
+    let consecutive = 0;
+    let maxConsecutive = 0;
     
-    for(var i = 0; i < binaryNum.length; i++)
+    while(n > 0)
         {
-            if(binaryNum[i] == '1')
+            let remainder = n % 2;
+            if (remainder === 1)
                 {
-                    count++;
+                    consecutive++;
+                    if (consecutive > maxConsecutive)
+                        maxConsecutive = consecutive;
                 }
+            else
+                consecutive = 0;
+            n = Math.floor(n/2);
         }
-    console.log(count);
+    console.log(maxConsecutive);
 }
